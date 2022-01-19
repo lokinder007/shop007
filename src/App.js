@@ -22,15 +22,15 @@ function App() {
         <BrowserRouter>
           <Routes>
 
-                {/* <Route path='/' exact element={<HomePage />} /> */}
                 <Route path='/login' exact element={<LoginPage />} />
                 <Route path='/register' exact element={<RegisterPage />} />
-                {/* <Route path='/productinfo/:productid' exact element={<ProductInfo />} /> */}
-                {/* <Route path='/cart' exact element={<CartPage />} /> */}
+                <Route path='/' exact element={<HomePage />} /> 
+                <Route path='/productinfo/:productid' exact element={<ProductInfo />} />
+                <Route path='/cart' exact element={<CartPage />} />
 
-                <Route path='/' exact element={<ProtectedRoutes> <HomePage /> </ProtectedRoutes>} />
+                {/* <Route path='/' exact element={<ProtectedRoutes> <HomePage /> </ProtectedRoutes>} />
                 <Route path='/productinfo/:productid' exact element={<ProtectedRoutes> <ProductInfo /> </ProtectedRoutes>} />
-                <Route path='/cart' exact element={<ProtectedRoutes> <CartPage /> </ProtectedRoutes>} />
+                <Route path='/cart' exact element={<ProtectedRoutes> <CartPage /> </ProtectedRoutes>} /> */}
 
           </Routes>
         </BrowserRouter>
@@ -40,10 +40,10 @@ function App() {
 
 export default App;
 
-export const ProtectedRoutes = ({ Children }) => {
-  if (localStorage.getItem('currentUser')) {
-    return Children
-  } else {
-    return <Navigate to='/login' />
-  }
-};
+// export const ProtectedRoutes = ({ Children }) => {
+//   if (localStorage.getItem('currentUser')) {
+//     return Children
+//   } else {
+//     return <Navigate to='/login' />
+//   }
+// };

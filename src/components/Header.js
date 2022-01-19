@@ -10,9 +10,10 @@ const Header = () => {
     const {user} = JSON.parse(localStorage.getItem('currentUser'))
 
     const logout = () => {
-        localStorage.removeItem('currentUser')
+        // localStorage.removeItem('currentUser')
         // navigate('/login')
-        window.location.reload();
+        // window.location.reload();
+        localStorage.clear();
     }
 
     return (
@@ -52,7 +53,7 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/" onClick={logout}>
+                                <Link className="nav-link" to="/login" onClick={logout}>
                                     Logout
                                 </Link>
                             </li>
